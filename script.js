@@ -1,30 +1,45 @@
-let cards = [];
+let flashcards = [];
 let index = 0;
-let showAnswer = false;
+let showingAnswer = false;
 
 fetch("flashcards.csv")
     .then(response => response.text())
     .then(data => {
-        const rows = data.split("\n").slice(1);
+        const rows = data.split("\n").slice(1); // skip header
         rows.forEach(row => {
-            const [question, answer] = row.split(",");
-            cards.push({ question, answer });
+            const parts = row.split(",");
+            if (parts.length >= 2) {
+                const question = parts[0].trim();
+                const answer = parts.slice(1).join(",").trim(); // handles commas in answers
+                flashcards.push({ question, answer });
+            }
         });
         showCard();
     });
 
 function showCard() {
-    showAnswer = false;
-    document.getElementById("cardText").innerText = cards[index].question;
+    showingAnswer = false;
+    document.getElementById("cardText").innerText = flashcards[index].question;
+    updateCounter();
 }
 
 function flipCard() {
     document.getElementById("cardText").innerText =
-        showAnswer ? cards[index].question : cards[index].answer;
-    showAnswer = !showAnswer;
+        showingAnswer ? flashcards[index].question : flashcards[index].answer;
+    showingAnswer = !showingAnswer;
 }
 
 function nextCard() {
-    index = (index + 1) % cards.length;
+    index = (index + 1) % flashcards.length;
     showCard();
+}
+
+function prevCard() {
+    index = (index - 1 + flashcards.length) % flashcards.length;
+    showCard();
+}
+
+function updateCounter() {
+    document.getElementById("counter").innerText =
+        `Card ${index + 1} of ${flashcards.length}`;
 }
