@@ -1,0 +1,65 @@
+"Which C# namespace must be included to use classes such as DirectoryInfo, StreamReader, and StreamWriter?",System.IO
+What C# property is used to retrieve the directory path from which the application is currently executing?,AppDomain.CurrentDomain.BaseDirectory
+What is the primary purpose of the DirectoryInfo class in C#?,"To provide instance methods for creating, deleting, and moving directories."
+Which property of a DirectoryInfo object indicates whether the specified directory exists on the disk?,Exists
+What method is called on a DirectoryInfo instance to create a new directory at the specified path?,Create()
+Which method in the DirectoryInfo class is used to retrieve an array of files that match a specific extension?,GetFiles()
+What search pattern string is passed to GetFiles() to ensure only text files are returned?,*.txt
+What is the primary function of the StreamWriter class?,To write text data to a file or a stream.
+What is the primary function of the StreamReader class?,To read text data from a file or a stream.
+Why should StreamReader and StreamWriter be instantiated within a using statement?,To ensure the file is closed and memory is freed automatically after use.
+Which method from the StreamReader class reads the entire content of a file into a single string variable?,ReadToEnd()
+What does the dispose method do when called on a file handling object?,It frees up the memory space previously occupied by that object.
+Which method in the Path class removes both the directory path and the file extension from a file path string?,GetFileNameWithoutExtension()
+"To handle runtime errors during file operations, code should be wrapped in a _____ structure.",try-catch
+"In the tutorial's example, what happens if no text files are present in the source directory?",An information.txt file is created to notify the user.
+Under what condition does the tutorial's code delete the information.txt file?,If it exists and there is more than one text file in the directory.
+What type of object is returned by the GetFiles() method of the DirectoryInfo class?,FileInfo[] (an array of FileInfo objects)
+Why is the StreamWriter object passed as a parameter to methods like addTopHTML and buildHTMLBody?,To allow multiple methods to write to the same output file stream.
+What is the benefit of using the static keyword for helper methods like buildHTMLBody in a console application's Main class?,It allows the methods to be called directly from the static Main method.
+Which C# loop is used to traverse the array of text files returned by the GetFiles() method?,foreach
+What is the purpose of the using statement in relation to the Close() method?,It ensures the Close() method is called automatically when the code block finishes.
+"In the context of HTML, what is a JavaScript library used for creating client-side interactive functionality like accordions?",jQuery
+Which specific jQuery UI widget was used in the tutorial to display Wildcat information?,Accordion widget
+What is the role of the HTMLOutputFile path variable in the tutorial's project?,It stores the full path where the consolidated HTML file will be saved.
+What type of application project was created at the beginning of the tutorial?,dotnet core console application
+How can you resolve a missing namespace error in Visual Studio using the mouse pointer?,"Hover over the red squiggly line and click ""show potential fixes."""
+What is the function of the rootPath variable in the Wildcat application?,It stores the execution directory path to locate and create files relative to the application.
+"In the tutorial, what is used to populate the headings of the jQuery UI accordion items?",The name of each text file (without the extension).
+Why does the tutorial consolidate multiple text files into a single HTML file?,To demonstrate reading from multiple sources and writing to a single output.
+What is the significance of the Close() method in file handling?,It releases the file lock so other processes or methods can access the file.
+How is the final HTML output displayed to the user in the tutorial?,The application launches the user's default web browser to open the file.
+What does an HTML file essentially consist of according to the tutorial's description?,A text file containing markup that is interpreted by a web browser.
+What happens if you instantiate a StreamReader outside of a using block and do not call Close()?,The file may remain locked and memory may not be released immediately.
+"In the buildHTMLBody method, what is the third parameter used for?",Passing the string content read from a text file.
+Why is it necessary to extract the filename without the extension when creating HTML headings?,"To provide a clean, readable title for the user interface."
+What is the purpose of the search pattern parameter in the DirectoryInfo.GetFiles method?,To filter the returned files based on specific naming or extension criteria.
+"In the tutorial, what is the default name given to the console application?",wildcats application
+What is the role of the initializedSourceDirectory method in the provided code?,To ensure the source directory exists and contains at least a default information file.
+Which C# keyword allows for the inclusion of external namespaces like System.IO at the top of a file?,using
+What is the outcome of passing a directory path to the DirectoryInfo constructor?,It initializes a new instance of the DirectoryInfo class for that specific path.
+How does the application determine the content of each accordion item?,By reading the text from individual .txt files in the source directory.
+What is the specific subject matter used for the text files in the tutorial's example?,Wildcats
+"In the provided code, where is the catch block located in relation to the file handling logic?",It follows the try block to handle any exceptions thrown during execution.
+"What does the asterisk (*) signify in a search pattern like ""*.txt""?",It acts as a wildcard representing any sequence of characters.
+Which method is used to launch the default browser in C#?,Process.Start()
+How does the tutorial describe the relationship between HTML and jQuery?,jQuery is a JavaScript library used to add interactivity to the markup in an HTML file.
+What is the final step in the initializedSourceDirectory method?,To return the DirectoryInfo object representing the source directory.
+Which variable name is used in the code to store the consolidated text before writing to the HTML file?,content
+What is the benefit of downloading the code from GitHub as suggested in the tutorial?,It saves time and avoids manual transcription errors from the video.
+What is the purpose of the addBottomHTML method in the Wildcat application?,To write the closing HTML tags to finish the document structure.
+"In the tutorial's loop, what happens to the content variable during each iteration?",It is overwritten with the text from the next file in the directory.
+What determines the path of the source directory relative to the executable?,The rootPath variable derived from the base directory.
+Why does the tutorial suggest pausing the video or using GitHub for the HTML/jQuery code?,Because explaining HTML and jQuery is beyond the scope of the C# tutorial.
+What type of error is prevented by checking if a directory exists before creating it?,An IOException or error from attempting to create an already existing folder.
+"In the tutorial's logic, what does a single accordion item represent?",The content of one individual text file.
+Which property of AppDomain is used to access the current domain's information?,CurrentDomain
+How does the stream writer know which file to write to?,The file path is passed as an argument to its constructor.
+What is the effect of the ReadToEnd() method on the stream's position?,It moves the position to the very end of the stream.
+"Which character separates the class name from its properties or methods in C#, such as in AppDomain.CurrentDomain?",The dot (.) or period.
+"In the tutorial, what is the next planned subject after handling text files?",Handling binary files.
+What is the primary advantage of using a Console application for this tutorial?,It provides a simple environment to focus on file handling logic without complex UI code.
+What is the purpose of the using directive at the top of a C# file?,To allow the use of types in a namespace so you do not have to qualify them fully.
+"In the tutorial, what specific wildcat was the first one added as a text file?",Lion
+How does the application ensure that the HTML file is updated when new text files are added?,The code traverses the directory and regenerates the HTML every time it runs.
+What is the relationship between DirectoryInfo and the local file system?,DirectoryInfo acts as a wrapper that provides access to the physical directory on the disk.
