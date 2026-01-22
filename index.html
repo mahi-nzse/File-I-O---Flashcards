@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Flashcards</title>
+    <meta charset="UTF-8">
+    <title>IT502 Flashcards</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Programming Flashcards</h2>
+<h1>IT502 – Programming 1 Flashcards</h1>
+<p>Click the card to flip between question and answer</p>
 
 <div id="card" onclick="flipCard()">
-    <p id="cardText">Click Start</p>
+    <p id="cardText">Loading flashcards...</p>
 </div>
 
-<button onclick="nextCard()">Next</button>
+<div class="controls">
+    <button onclick="prevCard()">Previous</button>
+    <button onclick="nextCard()">Next</button>
+</div>
+
+<p id="counter"></p>
 
 <script src="script.js"></script>
 </body>
